@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "es6",
+        "module": "commonjs",
+        "baseUrl": ".",
+        "outDir": "../../dist",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "paths": {
+            "@routes/*": ["./src/routes/*"],
+            "@commons/*": ["./src/commons/*"],
+            "@services/*": ["./src/services/*"]
+        },
+        "plugins": [
+            { 
+                "transform": "typescript-transform-paths" 
+            }
+        ],
+        "typeRoots": [ 
+            "./node_modules/@types",
+            "./src/types"
+        ]
+    },
+    "exclude": [
+        "./node_modules",
+        "./dist"
+    ]    
+}

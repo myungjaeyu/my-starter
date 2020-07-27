@@ -1,0 +1,34 @@
+{
+  "name": "service",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "boot": "lerna bootstrap",
+    "build": "rimraf dist && lerna run build",
+    "start": "lerna run start",
+    "lint": "lerna run lint",
+    "serve": "cross-env NODE_ENV=production node dist/index",
+    "serve-ui": "npx http-server -s -p 9009 -o storybook-static",
+    "deploy-ui": "now ./storybook-static --name=ui"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "cross-env": "^7.0.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "design-system": "*"
+  }
+}
